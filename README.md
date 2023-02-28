@@ -1,2 +1,2 @@
 # MVP
-Hack Reactor Minimum Viable Product
+Minimum Viable Product
