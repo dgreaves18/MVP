@@ -26,6 +26,12 @@ const Chart = ({ player1, player2, statistic, chart }) => {
           "BPG2": player2.seasons[index].teams[0].average.blocks,
           "TPG1": season.teams[0].average.turnovers,
           "TPG2": player2.seasons[index].teams[0].average.turnovers,
+          "FG%1": (Math.floor((season.teams[0].average.field_goals_made / season.teams[0].average.field_goals_att) * 10000) / 100),
+          "FG%2": (Math.floor((player2.seasons[index].teams[0].average.field_goals_made / player2.seasons[index].teams[0].average.field_goals_att) * 10000) / 100),
+          "3P%1": (Math.floor((season.teams[0].average.three_points_made / season.teams[0].average.three_points_att) * 10000) / 100),
+          "3P%2": (Math.floor((player2.seasons[index].teams[0].average.three_points_made / player2.seasons[index].teams[0].average.three_points_att) * 10000) / 100),
+          "FT%1": (Math.floor((season.teams[0].average.free_throws_made / season.teams[0].average.free_throws_att) * 10000) / 100),
+          "FT%2": (Math.floor((player2.seasons[index].teams[0].average.free_throws_made / player2.seasons[index].teams[0].average.free_throws_att) * 10000) / 100),
         });
       });
     } else {
@@ -46,14 +52,20 @@ const Chart = ({ player1, player2, statistic, chart }) => {
           "BPG2": season.teams[0].average.blocks,
           "TPG1": player1.seasons[index].teams[0].average.turnovers,
           "TPG2": season.teams[0].average.turnovers,
+          "FG%1": (Math.floor((player1.seasons[index].teams[0].average.field_goals_made / player1.seasons[index].teams[0].average.field_goals_att) * 10000) / 100),
+          "FG%2": (Math.floor((season.teams[0].average.field_goals_made / season.teams[0].average.field_goals_att) * 10000) / 100),
+          "3P%1": (Math.floor((player1.seasons[index].teams[0].average.three_points_made / player1.seasons[index].teams[0].average.three_points_att) * 10000) / 100),
+          "3P%2": (Math.floor((season.teams[0].average.three_points_made / season.teams[0].average.three_points_att) * 10000) / 100),
+          "FT%1": (Math.floor((player1.seasons[index].teams[0].average.free_throws_made / player1.seasons[index].teams[0].average.free_throws_att) * 10000) / 100),
+          "FT%2": (Math.floor((season.teams[0].average.free_throws_made / season.teams[0].average.free_throws_att) * 10000) / 100),
         });
       });
     }
     playerData.reverse();
   }
 
-  const p1LegendName = player1.full_name === undefined ? 'Player 1' : player1.full_name + '(' + statistic + ')';
-  const p2LegendName = player2.full_name === undefined ? 'Player 2' : player2.full_name + '(' + statistic + ')';
+  const p1LegendName = player1.full_name === undefined ? 'Player 1' : player1.full_name + ' (' + statistic + ')';
+  const p2LegendName = player2.full_name === undefined ? 'Player 2' : player2.full_name + ' (' + statistic + ')';
   const dataKeyName1 = statistic + '1';
   const dataKeyName2 = statistic + '2';
 
