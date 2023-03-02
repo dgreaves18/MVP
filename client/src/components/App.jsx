@@ -4,6 +4,7 @@ import axios from 'axios';
 import Chart from './Chart.jsx';
 import Player1Profile from './Player1Profile.jsx';
 import Player2Profile from './Player2Profile.jsx';
+import PlayerTable from './PlayerTable.jsx';
 import playerList from '../data/players/playerList.js';
 
 const App = () => {
@@ -97,14 +98,27 @@ const App = () => {
           <option value="SPG">Steals Per Game</option>
           <option value="BPG">Blocks Per Game</option>
           <option value="TPG">Turnovers Per Game</option>
+          <option value="FG%">Field Goal Percentage</option>
+          <option value="3P%">Three Point Percentage</option>
+          <option value="FT%">Free Throw Percentage</option>
         </select>
         {' '}
         <label>Select a chart: </label>
         <select onChange={handleChartSelect}>
           <option value="lineChart">Line Chart</option>
-          <option value="barChart">Bar Chart</option>
           <option value="areaChart">Area Chart</option>
+          <option value="barChart">Bar Chart</option>
         </select>
+      </div>
+      <div id="player-table1">
+        {player1.full_name && (
+          <PlayerTable player={player1}/>
+        )}
+      </div>
+      <div id="player-table2">
+        {player2.full_name && (
+          <PlayerTable player={player2}/>
+        )}
       </div>
     </div>
   );
