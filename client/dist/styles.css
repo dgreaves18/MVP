@@ -1,5 +1,54 @@
+body {
+  background-color: antiquewhite;
+  height: 100%;
+  width: 100%;
+}
+#root {
+  height: 90%;
+  width: 100%;
+}
+#app {
+  height: 80%;
+  width: 95%;
+  margin: 0 auto;
+}
+#main {
+  display: flex;
+}
+h1 {
+  position: relative;
+  top: 0;
+  left: 40%;
+}
+#description {
+  position: relative;
+  text-align: center;
+}
 .chart-container {
-  float: right;
-  width: 60vw;
+  width: 50%;
   height: 60vh;
+}
+#left-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+#left-select {
+
+}
+#left-profile {
+
+}
+#right-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+#right-select {
+
+}
+#metric-selector {
+  text-align: center;
 }
