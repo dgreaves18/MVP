@@ -85,8 +85,8 @@ const Chart = ({ player1, player2, statistic, chart }) => {
             <CartesianGrid strokeDasharray="3 3" />
             <YAxis width={40} domain={[0, 'auto']}/>
             <XAxis dataKey="year" />
-            <Line type="monotone" name={p1LegendName} dataKey={dataKeyName1} stroke="#8884d8" activeDot={{ r: 6 }} />
-            <Line type="monotone" name={p2LegendName} dataKey={dataKeyName2} stroke="#2f7d22" activeDot={{ r: 6 }} />
+            <Line type="monotone" name={p1LegendName} dataKey={dataKeyName1} stroke="#0c63c7" activeDot={{ r: 6 }} />
+            <Line type="monotone" name={p2LegendName} dataKey={dataKeyName2} stroke="#7d2222" activeDot={{ r: 6 }} />
             {player1.full_name && player2.full_name && (
               <Tooltip />
               )}
