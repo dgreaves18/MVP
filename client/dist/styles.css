@@ -42,6 +42,7 @@ img {
   margin: auto;
   border: 1px solid black;
   background-color: #fcf6ed;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .player-info {
   display: flex;
@@ -56,26 +57,26 @@ h2 {
   justify-content: center;
   flex-direction: row-reverse;
 }
-#stat-selector {
-
-}
 #chart-selector {
   margin-right: 1%;
 }
 #player-table1 {
   float: left;
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 #player-table2 {
   float: right;
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 .stats-table {
   border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .stats-table thead tr th {
@@ -110,6 +111,5 @@ tbody tr:hover {
   background-color:cornflowerblue !important;
 }
 tbody tr td:hover {
-  /* color: black; */
-  background-color:darkgrey;
+  background-color:blue;
 }
