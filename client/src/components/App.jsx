@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Chart from './Chart.jsx';
-import Player1Profile from './Player1Profile.jsx';
-import Player2Profile from './Player2Profile.jsx';
+import PlayerProfile from './PlayerProfile.jsx';
 import PlayerTable from './PlayerTable.jsx';
 import playerList from '../data/players/playerList.js';
 
@@ -57,58 +56,61 @@ const App = () => {
 
   return (
     <div id='app'>
-      <h1>NBA Player Comparison Tool</h1>
+      <div id="title">
+        <h1>NBA Player Comparison Tool</h1>
+      </div>
       <div id="description"><u>How to use</u>: select two players from the dropdown lists to compare!
       The graph will display the selected statistic in the common time period shared by both players.
       </div>
+      <hr></hr>
       <div id='main'>
-        <div id="left-player">
-          <div id="left-select">
-            <label>Choose a player: </label>
-            <select onChange={handle1stSelect}>
-              <option value="" disabled selected hidden>--Select--</option>
-              {playerList.map((player) => (
-                <option key={player.id} value={player}>{player}</option>
-              ))}
-            </select>
-          </div>
-          <Player1Profile player={player1}/>
+        <div className="player-container">
+          <label>Choose a player: </label>
+          <select onChange={handle1stSelect}>
+            <option value="" disabled selected hidden>--Select--</option>
+            {playerList.map((player) => (
+              <option key={player.id} value={player}>{player}</option>
+            ))}
+          </select>
+          <PlayerProfile player={player1}/>
         </div>
         <Chart player1={player1} player2={player2} statistic={statistic} chart={chart}/>
-        <div id="right-player">
-          <div id="right-select">
-            <label>Choose a player: </label>
-            <select onChange={handle2ndSelect}>
-              <option value="" disabled selected hidden>--Select--</option>
-              {playerList.map((player) => (
-                <option key={player.id} value={player}>{player}</option>
-                ))}
-            </select>
-          </div>
-          <Player2Profile player={player2}/>
+        <div className="player-container">
+          <label>Choose a player: </label>
+          <select onChange={handle2ndSelect}>
+            <option value="" disabled selected hidden>--Select--</option>
+            {playerList.map((player) => (
+              <option key={player.id} value={player}>{player}</option>
+              ))}
+          </select>
+          <PlayerProfile player={player2}/>
         </div>
       </div>
-      <div id="metric-selector">
-        <label>Select a statistic: </label>
-        <select onChange={handleMetricSelect}>
-          <option value="PPG">Points Per Game</option>
-          <option value="MPG">Minutes Per Game</option>
-          <option value="RPG">Rebounds Per Game</option>
-          <option value="APG">Assists Per Game</option>
-          <option value="SPG">Steals Per Game</option>
-          <option value="BPG">Blocks Per Game</option>
-          <option value="TPG">Turnovers Per Game</option>
-          <option value="FG%">Field Goal Percentage</option>
-          <option value="3P%">Three Point Percentage</option>
-          <option value="FT%">Free Throw Percentage</option>
-        </select>
+      <div id="chart-settings">
+        <span id="stat-selector">
+          <label>Select a statistic: </label>
+          <select onChange={handleMetricSelect}>
+            <option value="PPG">Points Per Game</option>
+            <option value="MPG">Minutes Per Game</option>
+            <option value="RPG">Rebounds Per Game</option>
+            <option value="APG">Assists Per Game</option>
+            <option value="SPG">Steals Per Game</option>
+            <option value="BPG">Blocks Per Game</option>
+            <option value="TPG">Turnovers Per Game</option>
+            <option value="FG%">Field Goal Percentage</option>
+            <option value="3P%">Three Point Percentage</option>
+            <option value="FT%">Free Throw Percentage</option>
+          </select>
+        </span>
         {' '}
-        <label>Select a chart: </label>
-        <select onChange={handleChartSelect}>
-          <option value="lineChart">Line Chart</option>
-          <option value="areaChart">Area Chart</option>
-          <option value="barChart">Bar Chart</option>
-        </select>
+        <span id="chart-selector">
+          <label>Select a chart: </label>
+          <select onChange={handleChartSelect}>
+            <option value="lineChart">Line Chart</option>
+            <option value="areaChart">Area Chart</option>
+            <option value="barChart">Bar Chart</option>
+          </select>
+        </span>
       </div>
       <div id="player-table1">
         {player1.full_name && (
