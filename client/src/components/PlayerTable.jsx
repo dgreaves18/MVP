@@ -36,26 +36,32 @@ const PlayerTable = ({ player }) => {
           // eslint-disable-next-line react/jsx-key
           <tr>
             <th data-stat="season">{season.year}</th>
-            <td data-stat="pos">{player.position}</td>
-            <td data-stat="g">{season.teams[0].total.games_played}</td>
-            <td data-stat="gs">{season.teams[0].total.games_started}</td>
-            <td data-stat="mp">{season.teams[0].average.minutes}</td>
-            <td data-stat="fg">{season.teams[0].average.field_goals_made}</td>
-            <td data-stat="fga">{season.teams[0].average.field_goals_att}</td>
-            <td data-stat="fg%">{(Math.floor((season.teams[0].average.field_goals_made / season.teams[0].average.field_goals_att) * 10000) / 100)}</td>
-            <td data-stat="3p">{season.teams[0].average.three_points_made}</td>
-            <td data-stat="3pa">{season.teams[0].average.three_points_att}</td>
-            <td data-stat="3p%">{(Math.floor((season.teams[0].average.three_points_made / season.teams[0].average.three_points_att) * 10000) / 100)}</td>
-            <td data-stat="ft">{season.teams[0].average.free_throws_made}</td>
-            <td data-stat="fta">{season.teams[0].average.free_throws_att}</td>
-            <td data-stat="ft%">{(Math.floor((season.teams[0].average.free_throws_made / season.teams[0].average.free_throws_att) * 10000) / 100)}</td>
-            <td data-stat="trb">{season.teams[0].average.rebounds}</td>
-            <td data-stat="ast">{season.teams[0].average.assists}</td>
-            <td data-stat="stl">{season.teams[0].average.steals}</td>
-            <td data-stat="blk">{season.teams[0].average.blocks}</td>
-            <td data-stat="tov">{season.teams[0].average.turnovers}</td>
-            <td data-stat="pf">{season.teams[0].average.personal_fouls}</td>
-            <td data-stat="pts">{season.teams[0].average.points}</td>
+            <td className="center" data-stat="pos">{player.position}</td>
+            <td className="center"data-stat="g">{season.teams[0].total.games_played}</td>
+            <td className="center"data-stat="gs">{season.teams[0].total.games_started}</td>
+            <td className="center"data-stat="mp">{season.teams[0].average.minutes}</td>
+            <td className="right" data-stat="fg">{season.teams[0].average.field_goals_made}</td>
+            <td className="right" data-stat="fga">{season.teams[0].average.field_goals_att}</td>
+            <td className="right" data-stat="fg%">{
+              season.teams[0].average.field_goals_made ? (Math.floor((season.teams[0].average.field_goals_made / season.teams[0].average.field_goals_att) * 10000) / 100) : 0
+            }</td>
+            <td className="right" data-stat="3p">{season.teams[0].average.three_points_made}</td>
+            <td className="right" data-stat="3pa">{season.teams[0].average.three_points_att}</td>
+            <td className="right" data-stat="3p%">{
+              season.teams[0].average.three_points_made ? (Math.floor((season.teams[0].average.three_points_made / season.teams[0].average.three_points_att) * 10000) / 100) : 0
+              }</td>
+            <td className="right" data-stat="ft">{season.teams[0].average.free_throws_made}</td>
+            <td className="right" data-stat="fta">{season.teams[0].average.free_throws_att}</td>
+            <td className="right" data-stat="ft%">{
+              season.teams[0].average.free_throws_made ? (Math.floor((season.teams[0].average.free_throws_made / season.teams[0].average.free_throws_att) * 10000) / 100) : 0
+              }</td>
+            <td className="right" data-stat="trb">{season.teams[0].average.rebounds}</td>
+            <td className="right" data-stat="ast">{season.teams[0].average.assists}</td>
+            <td className="right" data-stat="stl">{season.teams[0].average.steals}</td>
+            <td className="right" data-stat="blk">{season.teams[0].average.blocks}</td>
+            <td className="right" data-stat="tov">{season.teams[0].average.turnovers}</td>
+            <td className="right" data-stat="pf">{season.teams[0].average.personal_fouls}</td>
+            <td className="right" data-stat="pts">{season.teams[0].average.points}</td>
           </tr>
         ))}
         {/* <tr>
