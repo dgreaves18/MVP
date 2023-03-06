@@ -13,6 +13,7 @@ const playerSchema = new mongoose.Schema({
   jersey_number: {type: String},
   experience: {type: String},
   college: {type: String},
+  pictureURL: {type: String},
   team: {
     id: {type: String},
     name: {type: String},
