@@ -7,4 +7,4 @@
     <br></br>
 </h1>
 
-![main page](https://imgur.com/pIbJwCg)
+![main page](https://i.imgur.com/pIbJwCg.jpg)
