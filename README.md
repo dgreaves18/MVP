@@ -9,6 +9,9 @@
 
 ![main page](https://i.imgur.com/pIbJwCg.jpg)
 
+## Demo
+![demo gif](https://i.imgur.com/tgiSnrr.gif)
+
 ## Tech Stack
 ### Front-End
 <div>
