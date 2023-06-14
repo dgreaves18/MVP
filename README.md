@@ -34,3 +34,16 @@
   <img src='https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white' />
   <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
 </div>
+
+## How to Use
+* Clone repository and navigate into its directory
+* Use ```npm install``` to install dependencies
+* Create a .env file and add a port number to be used
+* In order for the app to work, the player data must be imported into a mongoDB collection
+  * In mongoDB, create a database named ```nba``` and a collection inside the nba database named ```players```
+  * Inside the repository, navigate to the folder named data. Inside it should be ```player-data.json```
+  * Run this command in the terminal: ```mongoimport --db nba --collection players --file player-data.json```
+* Back in the repository's main directory, run these two commands
+  * ```npm run build```
+  * ```npm run start```
+* Enter localhost:(your port number here) and enjoy!   
